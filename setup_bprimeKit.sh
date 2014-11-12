@@ -50,7 +50,8 @@ scram project $CMSSW_VERSION
 cd $CMSSW_VERSION/src
 eval `scramv1 runtime -sh` #cmsenv
 
-git cms-addpkg FWCore/Version #This should change at some point to git cms-init 
+git cms-init
+#git cms-addpkg FWCore/Version #This should change at some point to git cms-init 
 
 #This is the center piece. Check out bprimeKit code
 git clone ${GITHUB_PREFIX}ntuhep/bprimeKit.git MyAna/bprimeKit
