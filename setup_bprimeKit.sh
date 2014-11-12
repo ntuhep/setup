@@ -48,8 +48,8 @@ done
 #Set up the CMSSW envirnoment
 scram project $CMSSW_VERSION
 cd $CMSSW_VERSION/src
+eval `scramv1 runtime -sh` #cmsenv
 
-cmsenv
 git cms-addpkg FWCore/Version #This should change at some point to git cms-init 
 
 #This is the center piece. Check out bprimeKit code
@@ -64,6 +64,7 @@ git clone ${GITHUB_PREFIX}amarini/QuarkGluonTagger.git
 if $INSTALL_HITFIT; then
 	git clone ${GITHUB_PREFIX}ntuhep/bpkHitFit.git MyAna/bpkHitFit
 	git clone ${GITHUB_PREFIX}ntuhep/bpkHitFitAnalysis.git MyAna/bpkHitFitAnalysis
+	git cms-addpkg TopQuarkAnalysis/TopHitFit
 fi
 
 #Compile everything
